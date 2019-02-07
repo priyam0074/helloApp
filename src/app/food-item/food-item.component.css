@@ -1,0 +1,123 @@
+.page-layout {
+    margin-top: 21px;
+    position: relative;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 150px;
+    height: calc(100vh);
+    border-right: 1px solid black
+}
+
+._1LxRl {
+        width: 6px;
+        right: 2px;
+        bottom: 2px;
+        top: 2px;
+        border-radius: 3px;
+        position: absolute;
+}
+
+._30cCo{
+    position: relative;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    border-radius: inherit;
+    background-color: rgba(0,0,0,.2);
+    height: 46px;
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+    transition: opacity .3s ease;
+}
+.menu-layout a, a:focus, a:hover, a:visited {
+    text-decoration: none; 
+    background-color: transparent;
+
+}
+.menu-layout-items {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    display: block;
+    font-size: 15px;
+    color: #282c3f;
+    padding-top: 5px;
+    font-weight: 400;
+    margin-right: -15px;
+    padding-right: 20px;
+} 
+.menu-layout-items:first-child {
+    padding-bottom: 5px;
+}
+
+.menu-list {
+    padding: 30px 55px 100px;
+}
+.menu-list-title-layout:first-child {
+    margin-top: 0px;
+}
+.menu-list-title-layout {
+    border-bottom: 2px solid #282c3f;
+    margin-top: 23px;
+}
+.menu-list-title-layout:first-child .menu-list-title {
+    padding-top: 17px;
+}
+.menu-list-title {
+    padding-bottom: 2px;
+}
+.menu-list-no {
+    padding-bottom: 30px;
+    font-size: 13px;
+    color: #686b78;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.menu-list-itemlayout:first-child {
+    padding-top: 0px;
+}
+.menu-list-itemlayout {
+    padding-top: 23px;
+    position: relative;
+}
+.icon-layout {
+    position: relative;
+    top: 5px;
+    float: left;
+    
+}
+.icon-display {
+    color: #ad4728;
+    font-size: .8rem;
+}
+.menu-list-item {
+    position: relative;
+    padding-bottom: 25px;
+    margin-left: 20px;
+    border-bottom: 1px solid #e9e9eb
+}
+.menu-button {
+    float: right;
+    margin-top: -3px;
+    height: 30px;
+    width: 83px;
+    border: 1px solid #d4d5d9;
+    color: #60b246;
+    font-size: .9rem;
+    font-weight: 600;
+    line-height: 30px;
+    position: relative;
+    text-align: center;
+    background-color: #fff;
+}
+.menu-btn-add {
+    color: #60b246;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.menu-txt-layout {
+  margin-right: 90px;
+}
