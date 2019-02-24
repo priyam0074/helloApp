@@ -953,7 +953,7 @@ input:focus {
 }
 
 .main-panel .content {
-    padding: 30px 15px;
+    
     min-height: calc(100vh - 62px);
 }
 
@@ -4405,13 +4405,15 @@ fieldset[disabled] .form-control {
 
 .main-panel .navbar-fixed {
     position: fixed;
+    display: flex;
+    flex-direction: column;
     right: 0;
     width: calc(100% - 260px);
     z-index: 1030;
 }
 
 .main-panel .navbar-fixed+.content {
-    padding-top: 90px;
+    padding-top: 58px;
 }
 
 .nav-mobile-menu.nav .navbar-search-form .nc-icon {

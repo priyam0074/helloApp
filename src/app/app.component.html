@@ -139,14 +139,14 @@
         </li>
         <li class="separator hidden-lg hidden-md" *ngIf="isMobileMenu()"></li>
         <li  *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
-           <a routerLink="{{menuItem.path}}" routerLinkActive="active" class="nav-link"  data-target="#componentsExamples{{menuItem.id}}" data-href="#componentsExamples{{menuItem.id}}">
+           <a routerLink="{{menuItem.path}}" routerLinkActive="active" class="nav-link"  data-toggle="collapse"  data-href="#componentsExamples{{menuItem.id}}" style="cursor:pointer;">
                             <i class="{{menuItem.icon}}"></i>
                             <p>
                                 {{menuItem.title}}
                                 <b class="caret"></b>
                             </p>
                         </a>
-                        <div class="collapse" id="componentsExamples{{menuItem.id}}">
+                        <div class="collapse" id="#componentsExamples{{menuItem.id}}">
                             <ul class="nav">
                                 <li class="nav-item " *ngFor="let menuChild of menuItem.child">
                                     <a class="nav-link">
@@ -167,7 +167,7 @@
 
 
             <div class="main-panel">
-            <nav class="navbar navbar-default">
+            <div class="navbar navbar-default navbar-fixed">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" (click)="sidebarToggle()">
@@ -226,7 +226,7 @@
         </div>-->
         
     </div>
-</nav>
+</div>
 
 
                   

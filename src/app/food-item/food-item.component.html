@@ -1,8 +1,37 @@
-<div class="row">
-                        <div class="col-sm-12 col-md-12 col-xs-12" style="margin-top:20px">
-                                  
-                            <div class="row">
-                                <div class="col-sm-3 col-md-3 hidden-xs page-layout" >
+<div class="row mr-0">
+<div class="col-sm-12 col-md-12 col-xs-12" >
+                              
+                            <div class="row" style="margin-left: -15px !important;margin-right:0px !important;" >
+                                     <div  class="" style="
+    height: 15%;
+    /* position: sticky; */
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items:flex-start;
+    width: 83%;
+    /* top: 150px; */
+    /* top: 0; */
+    background: antiquewhite;
+    contain: layout;
+    z-index: 100;
+">
+<div class="" style="width:30%; flex:1;">
+<div class=" heading-layout">
+  <h1 class="res-title">Bihari Dhaba</h1>
+</div>
+</div>
+<div class="" style="width:30%; flex:2;">
+<div class=" heading-search">
+  <span class="glyphicon glyphicon-search icon-search"></span>
+  <span class="inputbox-search">
+    <input type="text" class="input-bar" placeholder="Search for dishes..." value="">
+  </span>
+</div>
+</div>
+</div>
+<div class="row mr-0">
+                                <div class="col-sm-2 col-md-2 hidden-xs page-layout" id="myScrollspy">
                                 <div style="height: 100%;
                                 max-height: calc(100vh - 197px);">
                                   <div class="position: relative;
@@ -19,42 +48,50 @@
                                    overflow-y: scroll;
                                    " >
                                  <div class="menu-layout" style="padding-right: 13px;padding-top: 30px;
-                                 text-align: right;">
-                                 <a><div class="menu-layout-items">Reccommend</div></a>
-                                 <a><div class="menu-layout-items">hello</div></a>
-                                <a><div class="menu-layout-items">soup</div>
-                                </a></div>   
+                                 text-align: right;"  *ngFor="let menuItem of menuDetails;let i = index">
+                                 <a ><div class="menu-layout-items" (click)="scrollTo(menuItem)" >{{menuItem.category}}</div><div class="menu-active" *ngIf="currentSection == allInfo(menuItem.id)" [ngStyle]="styleCheck(i)"></div></a>
+                                 
+                                </div>   
                                 </div>
                                 </div>
                                 <div class="_1LxRl"><div class="_30cCo" style="transform: translateY(51.5016px); height: 23.0831px; visibility: visible; opacity: 0;"></div></div>
                                 </div>
 
                                 </div>
-                                <div class="col-sm-5 col-md-5 hidden-xs menu-list">
-                                  <div class="menu-list-title-layout">
-                                    <h2 class="menu-list-title">Rolls</h2>
-                                    <div class="menu-list-no">5 ITEMS</div>
+                                <div class="col-sm-6 col-md-6 hidden-xs menu-list" style="position: sticky;
+    /* top: 150px; */
+    /* position: fixed; */
+    overflow-y: scroll;
+    height: 50%;"              scrollSpy [spiedTags]="['DIV']" sectionChange="onSectionChange($event)" >
+                                  <div class="menu-list-title-layout" id="scroll{{menuItem.id}}" *ngFor="let menuItem of menuDetails">
+                                    <h2 class="menu-list-title">{{menuItem.category}}</h2>
+                                    <div class="menu-list-no">{{menuItem.items.length}} ITEMS</div>
                                     <div>
                                       <div class="menu-list-itemlayout" >
-                                      <div>
-                                        <span class="fa fa-stop-circle-o icon-display icon-layout"></span>
+                                      <div *ngFor="let menuChild of menuItem.items, let i = index">
+                                        
                                            <div class="menu-list-item">
                                              <div class="row">
-                                               <div class="menu-button col-sm-2 col-md-2">
-                                               <div class="menu-btn-add">ADD</div>
-                                               </div>
+                                               
                                                <div class="menu-txt-layout col-sm-10 col-md-10">
+                                                  <span class="fa fa-stop-circle-o icon-display icon-layout"></span>
                                                  <div class="menu-txt">
-                                                   <div class="jTy8b" itemprop="name">Double Chicken Seekh Roll(Egg) + Double Chicken Roll        </div>
-                                                   <div class="_2FMT0 _22D_E" style="background-color: rgb(213, 61, 76); color: rgb(255, 255, 255);">BESTSELLER
-                                                     <span class="rZ-gh" style="border-color: rgb(213, 61, 76) transparent;"></span>
-                                                   </div>
+                                                   <div class="menu-txt-font" itemprop="name"><div class="jTy8b" itemprop="name">{{menuChild.name}}</div>       </div>
+                                                  
                                                   </div>
-                                                  <div class="_12lpv MwITc">
-                                                    <span class="_22I-3 bQEAj grcH5">239</span>
-                                                    <span class="bQEAj">191</span>
+                                                  <div class="menu-description">{{menuChild.description}}</div>
+                                                  <div class="menu-price">
+                                                    <span class="bQEAj">{{menuChild.price}}</span>
                                                   </div>
                                                 </div>
+                                                <div class="menu-button col-sm-2 col-md-2">
+                                               <div class="menu-btn-add"  *ngIf="!menuChild.show" (click)="toggleQuantity(menuChild, i)">ADD</div>
+                                                <div *ngIf="menuChild.show">
+                                                <div class="menu-btn-qunatity-sub" (click)="checkMinQuantity(menuChild, i)">-</div>
+                                                <div class="menu-btn-qunatity-num">{{menuChild.quantity}}</div>
+                                                <div class="menu-btn-qunatity-add" (click)="checkMaxQuantity(menuChild, i)">+</div>
+                                                </div>
+                                               </div>
                                               </div>
                                             </div>
                                             </div>
@@ -64,9 +101,52 @@
                                   </div>
 
                                 </div> 
-                                <div class="col-sm-4 col-md-4 hidden-xs">
-
+                                <div class="col-sm-4 col-md-4 hidden-xs cart-layout">
+                                       <div class="cart-height" >
+                                         <div class="cart-background" *ngIf="cartItemsLen<1">
+                                           <div class="cart-title">Cart Empty</div>
+                                           <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_480/Cart_empty_-_menu_2x_ejjkf2" class="cart-pic">
+                                           <div class="cart-description">Good food is always cooking! Go ahead, order some yummy items from the menu.</div>
+                                           </div>
+                                          <div *ngIf="cartItemsLen > 0">
+                                           <div class="cart-in-layout ">Cart <div class="cart-in-itemNo">{{cartItemsLen}} Items</div></div>
+                                           <div class="cart-in-items-layout ">
+                                             <div class="row">
+                                               <div class="col-sm-12 col-md-12 itemcart-height">
+                                                 <div class="row">
+                                               
+                                               <div class="col-sm-11 itemcart-layout" *ngFor="let item of cartItems">
+                                                 <div class="itemcart-icon"><span class="fa fa-stop-circle-o"></span></div>
+                                                 <div class="itemcart-items">{{item.item}}</div>
+                                                 <div class="menu-button" style="flex-grow: 1; min-width:15%;margin-top:1px;">
+                                                <div class="menu-btn-qunatity-sub" >-</div>
+                                                <div class="menu-btn-qunatity-num">1</div>
+                                                <div class="menu-btn-qunatity-add" >+</div>
+                                                </div>
+                                                <div class="item-cart-price">
+                                                  <span>{{item.price}}</span>
+                                                </div>
+                                              </div>
+                                             </div>
+                                             </div>
+                                           </div>
+                                           </div>
+                                       
+                                           
+                                           <div class="checkout-layout">
+                                                <div class="checkout-layout-title"> 
+                                                  <div class="checkout-layout-title-font">Sub Total</div>
+                                                  <div style="flex: 1;"><span>1123</span></div>
+                                           </div>
+                                           <div class="checkout-desc">Extra charges may apply</div>
+                                           <div class="checkout-btn" (click)="open(content)">Checkout  →</div>
+"
+                                          </div>
+                                          </div>
+                                          
+                                       
                                     </div> 
                             </div>
+                           </div>
                         </div>
                     </div>

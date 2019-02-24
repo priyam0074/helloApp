@@ -5,7 +5,7 @@
     position: sticky;
     top: 150px;
     height: calc(100vh);
-    border-right: 1px solid black
+    border-right: 1px solid #7e808c;
 }
 
 ._1LxRl {
@@ -53,7 +53,7 @@
 }
 
 .menu-list {
-    padding: 30px 55px 100px;
+    padding: 0px 55px 100px;
 }
 .menu-list-title-layout:first-child {
     margin-top: 0px;
@@ -82,6 +82,9 @@
     padding-top: 23px;
     position: relative;
 }
+.menu-layout-items:hover{
+        color: #fc8019
+}
 .icon-layout {
     position: relative;
     top: 5px;
@@ -95,14 +98,23 @@
 .menu-list-item {
     position: relative;
     padding-bottom: 25px;
-    margin-left: 20px;
+    margin-left: 0px;
     border-bottom: 1px solid #e9e9eb
+}
+.menu-active {
+    position: absolute;
+    display: inline-block;
+    top: 7px;
+    right: 0%;
+    width: 4px;
+    height: 18px;
+    background: #fc8019;
+    z-index: 1;
 }
 .menu-button {
     float: right;
-    margin-top: -3px;
+    margin-top: 3px;
     height: 30px;
-    width: 83px;
     border: 1px solid #d4d5d9;
     color: #60b246;
     font-size: .9rem;
@@ -118,6 +130,257 @@
     height: 100%;
     cursor: pointer;
 }
+.menu-btn-qunatity-num {
+    animation: akcss .2s ease;
+    position: absolute;
+    left: 33.33333%;
+    top: 0;
+    width: 33.33333%;
+    display: inline-block;
+    opacity: 1;
+    transform: translateZ(0);
+    cursor: pointer;
+}
+.menu-btn-qunatity-add {
+    animation: _1gckB .2s ease;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 33.33333%;
+    display: inline-block;
+    opacity: 1;
+    transform: translateZ(0);
+    cursor: pointer;
+    font-size: 150%;
+    font-weight: 600;
+}
+.menu-btn-qunatity-sub {
+    animation: _1vozQ .2s ease;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 33.33333%;
+    display: inline-block;
+    opacity: 1;
+    transform: translateZ(0);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
 .menu-txt-layout {
-  margin-right: 90px;
+  margin-right: 0px;
+}
+.menu-txt {
+    margin-left: 20px;
+}
+.menu-txt-font {
+    font-size: 15px;
+    color: #282c3f;
+    font-weight: 600;
+    line-height: 20px;
+    margin-right: 10px;
+}
+.menu-price {
+    color: #535665;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-left: 20px
+}
+.menu-description {
+    margin-right: 5px;
+    margin-top: 4px;
+    width: 100%;
+    padding-right: 10px;
+    margin-left: 20px;
+    line-height: 15px;
+    font-size: 13px;
+    color: #7e808c;
+}
+.cart-layout {
+    height: calc(100vh - 197px);
+    padding: 26px 10px 0;
+    transition: height .4s ease;
+    margin-top: 21px;
+    position: relative;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 150px;
+    contain:layout;
+}   
+.cart-height {
+    height: 100%;
+}
+.cart-background {
+    background: transparent!important;
+}
+.cart-in-layout {
+    font-size: 32px;
+    font-weight: 600;
+    padding-bottom: 18px;
+    color: #282c3f;
+    font-family: ProximaNova,Arial,Helvetica Neue,sans-serif;
+    letter-spacing: 0;
+}
+.cart-in-itemNo {
+    font-weight: 500;
+    font-size: 13px;
+    color: #686b78;
+    text-transform: uppercase;
+    padding-top: 2px;
+}
+.cart-in-items-layout {
+    margin: 0 -10px;
+    position: relative;
+    max-width: 100%;
+}
+.cart-title {
+    color: #7e808c;
+    letter-spacing: -.3px;
+    font-size: 32px;
+    font-weight: 600;
+}
+.cart-pic {
+    margin-top: 47px;
+    opacity: .5;
+    width: 100%;
+    height: 212px;
+}
+.cart-description {
+    color: #93959f;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 300;
+    max-width: 218px;
+}
+.itemcart-layout{
+    display:flex;
+    align-items: flex-start;
+    padding-bottom: 12px;
+}
+.itemcart-icon {
+    color: #339a33;
+    width: 24px;
+    height: 15px;
+    top: 10px;
+    position: relative;
+}
+.itemcart-height {
+    
+}
+.item-cart-price{
+    font-size: 13px;
+    color: #535665;
+    text-align: right;
+    width: 45px;
+    margin-top: 7px;
+}
+.itemcart-items{
+    font-size: 14px;
+    font-weight: 400;
+    margin-top:7px;
+    margin-left: 10px;
+    margin-right: 5px;
+    flex-grow: 2;
+}
+.itemcart-icon span {
+    color: #ad4728;
+    padding-left: 1px;
+}
+.res-title {
+    max-width: 538px;
+    margin: 0;
+    font-weight: 300;
+    font-size: 32px;
+}
+.checkout-layout{
+    margin-top: 17px;
+    min-height: 115px;
+}
+.checkout-layout-title{
+    color: #3d4152;
+    font-size: 15px;
+    font-weight: 600;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+
+    
+}
+.checkout-btn {
+    height: 50px;
+    background-color: #60b246;
+    outline: 0;
+    cursor: pointer;
+    border: 0;
+    color: #fff;
+    margin-top: 28px;
+    text-transform: uppercase;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+.checkout-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: #7e808c;
+    margin-top: 2px;
+}
+.checkout-layout-title-font{
+    font-size: 17px;
+    -ms-flex: 2;
+    flex: 2;
+}
+.heading-layout{
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    padding: 12px 32px;
+    transform: translateZ(0);
+    transition: transform .2s ease-in-out;
+    position: relative;
+}
+.heading-search {
+    width: 254px;
+    display: table;
+    table-layout: fixed;
+    margin-top: 15px;
+    box-shadow: 0 3px 15px 0 rgba(40,44,63,.1);
+    border: 1px solid rgba(0,0,0,.04);
+    height: 40px;
+    background-color: #fff;
+}
+.icon-search {
+    font-size: 16px;
+    font-weight: 700;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 40px;
+    width: 45px;
+}
+
+.inputbox-search {
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+.input-bar {
+    border: none;
+    -webkit-appearance: textfield;
+    -webkit-rtl-ordering: logical;
+    vertical-align: middle;
+    width: 100%;
+    height: 22px;
+    line-height: 22px;
+    font-weight: 600;
+    position: relative;
+    top: -1px;
+    caret-color: #fc8019;
 }
