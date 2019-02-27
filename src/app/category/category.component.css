@@ -131,18 +131,7 @@
 }
 .accord-caret {
     display: inline-block;
-    width: 12px;
-    height: 4px;
-    vertical-align: middle;
-    border-top: 10px dashed;
-    /* border-bottom: 0px dashed; */
-    border-top: 4px solid\9;
-    border-right: 4px solid transparent;
-    border-left: 4px solid transparent;
-    margin-top: 13px;
-    position: absolute;
-    right: 3%;
-    top: 30%;
+    float: right;
     color: white;
     transition: all 150ms ease-in;
 }

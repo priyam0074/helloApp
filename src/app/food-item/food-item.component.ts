@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+//import assd from 'bootstrap';
+
 import { BillingAddModalComponent } from './../modal/billing-add-modal/billing-add-modal.component';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
@@ -14,6 +16,9 @@ export class FoodItemComponent implements OnInit {
 public closeResult: string;
 cartItemsLen:any= 0;
 cartItems:any = [];
+scroller(id) {
+  $(id)[0].scrollIntoView({behavior: "smooth", block: "start"});
+}
    scrollTo(section) {
      var targetId = '#scroll'+ section.id;
      this.currentSection = 'scroll'+ section.id;;
