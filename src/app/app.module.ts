@@ -9,6 +9,9 @@ import { CategoryComponent } from './category/category.component';
 import { FoodItemComponent } from './food-item/food-item.component';
 import { ScrollSpyDirective } from './Directive/scroll-spy.directive';
 import { BillingAddModalComponent } from './modal/billing-add-modal/billing-add-modal.component';
+//import { SalesCompoentComponent } from './sales-compoent/sales-compoent.component';
+import { SalesComponent } from './sales/sales.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,13 +20,16 @@ import { BillingAddModalComponent } from './modal/billing-add-modal/billing-add-
     CategoryComponent,
     FoodItemComponent,
     ScrollSpyDirective,
-    BillingAddModalComponent
+    BillingAddModalComponent,
+    SalesComponent
   ],
   imports: [
     CommonModule, 
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    FormsModule,
+    NgbModule.forRoot(),
+    
   ],
   providers: [],
   entryComponents:[BillingAddModalComponent],

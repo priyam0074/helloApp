@@ -1,0 +1,258 @@
+<div class="page-title-breadcrumb">
+  <div class="date-header">
+    <form>
+      <div class="form-group header-search">
+        <label for="exampleInputEmail1">Search</label>
+        <input type="email" class="form-control input-display" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="search">
+       <!---->
+      </div>
+      <div class="form-group header-from">
+          <label for="exampleInputEmail1">From</label>
+        <div class="input-group">
+          <input class="form-control input-display" placeholder="yyyy-mm-dd"
+                 name="dp" [(ngModel)]="model" ngbDatepicker [footerTemplate]="footerTemplate" #d="ngbDatepicker">
+          <div class="input-group-append pos-calender">
+            <span class="  calendar fa fa-calendar fa-lg" (click)="d.toggle()" type=""></span>
+            
+          </div>
+        </div>
+        <!--<span class="abc"></span>-->
+      </div>
+      <div class="form-group header-from">
+          <label for="exampleInputEmail1">To</label>
+        <div class="input-group">
+          <input class="form-control input-display" placeholder="yyyy-mm-dd"
+                 name="dp" [(ngModel)]="model" ngbDatepicker [footerTemplate]="footerTemplate" #d="ngbDatepicker">
+          <div class="input-group-append pos-calender">
+            <span class="  calendar fa fa-calendar fa-lg" (click)="d.toggle()" type=""></span>
+            
+          </div>
+        </div>
+        <!--<span class="abc"></span>-->
+      </div>
+
+      <div class="form-group header-button">
+        <label></label>
+           <div class="checkBtn">
+             <div class="checkBtn-font">check</div>
+
+           </div>
+        </div>
+      
+      </form>
+      <ng-template #footerTemplate>
+        <hr class="my-0">
+        <button class="btn btn-primary btn-sm m-2 float-left" (click)="model = today; d.close()">Today</button>
+        <button class="btn btn-secondary btn-sm m-2 float-right" (click)="d.close()">Close</button>
+      </ng-template>
+  </div>
+  <div class="main-cont">
+    <div class="flex-row" style="flex:2; ">
+      <div class="col-sm-6 col-md-6">
+        <div class="fuse-card mb-20 mr-20">
+          <div class="fuse-card-header pb-0" style="padding:16px">
+            <div class="width-100">
+          <div class="card-top">
+          <div class="pull-left text-card"> Total Sales</div>
+          <div class="text-card-menu" ngbDropdown placement="bottom-right" #myDrop="ngbDropdown">
+            <div class="fa fa-ellipsis-v" id="dropdownManual" ngbDropdownToggle></div>
+              <div ngbDropdownMenu aria-labelledby="dropdownManual">
+    <button class="dropdown-item">Action - 1</button>
+    <button class="dropdown-item">Another Action</button>
+    <button class="dropdown-item">Something else is here</button>
+  </div>
+          </div>
+          </div>
+          <div class="card-contents ">3456777</div>
+          </div>
+          </div>
+          <div class="card-events">
+
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-6">
+        <div class="fuse-card mb-20 mr-20 ">
+          <div class="fuse-card-header pb-0" style="padding:16px">
+            <div class="width-100">
+          <div class="card-top">
+          <div class="pull-left text-card"> Total Items</div>
+          <div class="text-card-menu" ngbDropdown placement="bottom-right" #myDrop="ngbDropdown">
+            <div class="fa fa-ellipsis-v" id="dropdownManual" ngbDropdownToggle></div>
+              <div ngbDropdownMenu aria-labelledby="dropdownManual">
+    <button class="dropdown-item">Today</button>
+    <button class="dropdown-item">Last Week</button>
+    <button class="dropdown-item">Last Month</button>
+  </div>
+          </div>
+          </div>
+          <div class="card-contents ">45</div>
+          </div>
+          </div>
+          <div class="card-events">
+
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12" style="margin-top:4%;">
+       <div class="fuse-card mb-20 mr-20" style="margin-bottom:20px;">
+        <div class="light-blue-theme">
+          <div class="fuse-card-header" style="padding:16px">
+            <div class="width-100">
+               <div class="table-top ">
+          <div class="pull-left text-card table-text-card"> Total Sales</div>
+          <div class="text-card-menu" ngbDropdown placement="bottom-right" #myDrop="ngbDropdown" style="font-size:23px;">
+            <div class="fa fa-ellipsis-v" id="dropdownManual" ngbDropdownToggle></div>
+              <div ngbDropdownMenu aria-labelledby="dropdownManual">
+    <button class="dropdown-item">Action - 1</button>
+    <button class="dropdown-item">Another Action</button>
+    <button class="dropdown-item">Something else is here</button>
+  </div>
+          </div>
+          </div>
+            </div>
+          </div>
+          <div class="table-top-body">
+            <div class="sale-figure">123456</div>
+            <div class="sale-analytics">
+              <div class="fa fa-line-chart chart-icon">
+              </div>
+                <div style="font-size: 18px; margin-left: 14px!important;">2345 (2.05%)</div>
+              
+            </div>
+
+          </div>
+          <div class="table-tab">
+             <ul class="nav  tab-header">
+  <li class="tab-panels" *ngFor="let item of items"  (click)="toggleClass(item)" [ngClass]="{'active': item.active}">
+    <a class="tab-title" data-toggle="tab" href="#{{item.id}}" >{{item.name}}</a></li>
+  <!--<li class="tab-panels"><a class="tab-title" data-toggle="tab" href="#menu1" #refEl1 (click)="activeTab(refEl1)">Menu 1</a></li>-->
+  <!--<li class="tab-panels"><a class="tab-title" data-toggle="tab" href="#menu2" #refEl2 (click)="activeTab(refEl2)">Menu 2</a></li>-->
+</ul>
+
+<div class="tab-content">
+  <div id="today" class="tab-pane fade in active">
+<div>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Food item</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+  </div>
+  <div id="week" class="tab-pane fade">
+    <h3>Menu 1</h3>
+    <p>Some content in menu 1.</p>
+  </div>
+  <div id="month" class="tab-pane fade">
+    <h3>Menu 2</h3>
+    <p>Some content in menu 2.</p>
+  </div>
+</div>
+          </div>
+        </div>
+       </div>
+      </div>
+      
+    </div>
+    <div class="row" style="flex:1;position:sticky; height:100%;margin-left: 1.25rem;">
+      <div class="col-sm-12 col-md-12">
+        <div class="fuse-card mb-20 mr-20 vert-scroll">
+          <div class="fuse-card-header" style="padding:16px">
+            <div class="width-100">
+              <div class="card-top">
+          <div class="pull-left text-card side-menu-header"> Top 5 Selling Items</div>
+          <div class="text-card-menu" ngbDropdown placement="bottom-right" #myDrop="ngbDropdown">
+            <div class="fa fa-ellipsis-v" id="dropdownManual" ngbDropdownToggle></div>
+              <div ngbDropdownMenu aria-labelledby="dropdownManual">
+                <button class="dropdown-item">Today</button>
+                <button class="dropdown-item">Last Week</button>
+                <button class="dropdown-item">Last Month</button>
+              </div>
+          </div>
+          </div>
+            </div>
+          </div>
+          <div>
+          <table class="simple table table-hover">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Items sold</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Daal makhni</td><td>50</td></tr>
+              <tr><td> Dal Fry</td><td>25</td></tr>
+              <tr><td>hakkka nodles</td><td>10</td></tr>
+              <tr><td>hdsjskaa </td><td>9</td></tr>
+              <tr><td>alkdkladlakadl dsd</td><td>6</td></tr>
+            </tbody>
+
+          </table>
+        </div>
+        <div class="fuse-card-header" style="padding:16px">
+            <div class="width-100">
+              <div class="card-top">
+          <div class="pull-left text-card side-menu-header"> Top 5 worst Items</div>
+          <div class="text-card-menu" ngbDropdown placement="bottom-right" #myDrop="ngbDropdown">
+            <div class="fa fa-ellipsis-v" id="dropdownManual" ngbDropdownToggle></div>
+              <div ngbDropdownMenu aria-labelledby="dropdownManual">
+                <button class="dropdown-item">Today</button>
+                <button class="dropdown-item">Last Week</button>
+                <button class="dropdown-item">Last Month</button>
+              </div>
+          </div>
+          </div>
+            </div>
+          </div>
+          <div>
+          <table class="simple table table-hover">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Items sold</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Daal makhni</td><td>50</td></tr>
+              <tr><td> Dal Fry</td><td>25</td></tr>
+              <tr><td>hakkka nodles</td><td>10</td></tr>
+              <tr><td>hdsjskaa </td><td>9</td></tr>
+              <tr><td>alkdkladlakadl dsd</td><td>6</td></tr>
+            </tbody>
+
+          </table>
+        </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div> 

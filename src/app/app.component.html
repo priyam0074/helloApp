@@ -138,12 +138,38 @@
             </a>
         </li>
         <li class="separator hidden-lg hidden-md" *ngIf="isMobileMenu()"></li>
+        <li class="user-profile">
+            <a class="nav-link sidebar-link" style="cursor:pointer;">
+                <p>
+                    Sehgal YS
+                </p>
+            </a>
+        </li>
+        <li  *ngFor="let user of userInfo" class="{{user.class}}">
+           <a  class="nav-link sidebar-link "  data-toggle="collapse"  data-href="#componentsExample{{user.id}}" style="cursor:pointer;">
+                            <i class="{{user.icon}} icon-left"></i>
+                            <p>
+                                {{user.userName}}
+                                <b class="caret"></b>
+                            </p>
+                        </a>
+                        <div class="collapse" id="componentsExample{{user.id}}">
+                            <ul class="nav">
+                                <li class="nav-item " *ngFor="let userChild of user.child">
+                                    <a class="nav-link">
+                                        <span class="sidebar-mini">{{userChild.sn}}</span>
+                                        <span class="sidebar-normal">{{userChild.name}}</span>
+                                    </a>
+                                </li></ul>
+                        </div>
+            
+        </li>
         <li  *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
-           <a routerLink="{{menuItem.path}}" routerLinkActive="active" class="nav-link"  data-toggle="collapse"  data-href="#componentsExamples{{menuItem.id}}" style="cursor:pointer;">
-                            <i class="{{menuItem.icon}}"></i>
+           <a routerLink="{{menuItem.path}}" routerLinkActive="active" class="nav-link sidebar-link"  data-toggle="collapse"  data-href="#componentsExamples{{menuItem.id}}" style="cursor:pointer;">
+                            <i class="{{menuItem.icon}} icon-left"></i>
                             <p>
                                 {{menuItem.title}}
-                                <b class="caret"></b>
+                                <!--<b class="caret"></b>-->
                             </p>
                         </a>
                         <div class="collapse" id="#componentsExamples{{menuItem.id}}">

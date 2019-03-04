@@ -1,0 +1,40 @@
+.sidebar-link {
+    color: #FFFFFF;
+    margin: 5px 15px;
+    opacity: .86;
+    border-radius: 4px;
+    display: block;
+
+}
+.icon-left {
+    font-size: 28px;
+    float: left; 
+    margin-right: 15px;
+    line-height: 30px;
+    width: 30px;
+    text-align: center;
+    color: #FFFFFF;
+}
+.user-profile{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 20px;
+    margin-top: 20px;
+}
+
+.sidebar .nav li:hover > a, .bootstrap-navbar .nav li:hover > a {
+    background: rgba(255, 255, 255, 0.13);
+    opacity: 1;
+}
+.sidebar .nav li > a, .bootstrap-navbar .nav li > a {
+    color: #FFFFFF;
+    margin: 5px 15px;
+    opacity: .86;
+    border-radius: 4px;
+    display: block;
+}
+.sidebar .nav a, .table>tbody>tr .td-actions .btn {
+    transition: all 150ms ease-in;
+}
+.nav-link:focus, .nav-link:hover {
+    text-decoration: none;
+}

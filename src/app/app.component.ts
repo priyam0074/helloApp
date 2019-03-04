@@ -12,7 +12,11 @@ export const rat: any = [
     { id:1,path: '/dashboard', title: 'Category',  icon: 'pe-7s-graph', class: '', child: [{name:'Soup', sn:'S'},{name:'Beverages', sn:'B'},{name:'Main Course', sn:'M'}] },
     { id:2,path: '/detail', title: 'Food Category',  icon:'pe-7s-user', class: '' },
     { id:3,path: '/heroes', title: 'Billing',  icon:'pe-7s-note2', class: '' },
+     { id:3,path: '/sales', title: 'Sales',  icon:'pe-7s-note2', class: '' },
 ];
+export const userInfos: any = [{
+    id:1, userName:'Ramesh Kumar', icon: 'pe-7s-graph', class:'user-profile', child:[{name:'My Profile', sn:'MP'},{name:'Edit Profile', sn:'EP'},{name:'Setting', sn:'S'}]
+}]
 
 
 @Component({
@@ -22,6 +26,7 @@ export const rat: any = [
 })
 export class AppComponent implements OnInit {
   menuItems: any[];
+  userInfo: any[];
    private listTitles: any;
     location: Location;
     private toggleButton: any;
@@ -34,6 +39,7 @@ export class AppComponent implements OnInit {
     }
   ngOnInit() {
     this.menuItems = rat.filter(menuItem => menuItem);
+    this.userInfo = userInfos.filter(user => user);
     this.listTitles = rat.filter(listTitle => listTitle);
       const navbar: HTMLElement = this.element.nativeElement;
       this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
